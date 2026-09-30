@@ -1,8 +1,0 @@
-Scan Time: 2026-09-07 02:00:11
-Target : 10.0.2.15
-port : 21 STATUS: OPEN
-port : 22 STATUS: OPEN
-port : 443 STATUS: OPEN
-port : 3389 STATUS: OPEN
-port : 80 STATUS: OPEN
-port : 8080 STATUS: OPEN

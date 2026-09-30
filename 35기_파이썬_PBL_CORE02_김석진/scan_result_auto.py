@@ -2,6 +2,8 @@ from pathlib import Path
 import shutil
 import csv
 import json
+import glob
+
 # log_data = """Scan Time: 2026-09-07 02:00:11
 # Target : 10.0.2.15
 # port : 21 STATUS: OPEN
@@ -31,6 +33,13 @@ if Path("vuln_scan.log").exists():
     if not archive_dir.exists():
         archive_dir.mkdir(exist_ok=True)
     shutil.move("vuln_scan.log",archive_dir)
+
+    if glob.glob(f"{archive_dir}/vuln_scan.log"):
+        print("vuln_scan.log 파일 이동에 성공했습니다.")
+    else:
+        print("vuln_scan.log 파일 이동에 실패했습니다")
+else :
+    print("vuln_scan.log 파일이 존재하지 않습니다.")
 
 
 with open(f"{archive_dir}/vuln_scan.log", "r",encoding="utf-8") as f:
